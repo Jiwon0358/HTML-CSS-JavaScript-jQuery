@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>iframe</title>
+	</head>
+	<body>
+	<!--
+		안에 inner.html길이가 300 X 300을 넘어가면 스크롤이 생긴다.(즉 지정해준 크기)
+		보안에 취약
+		
+	 -->
+		<iframe src = "inner.html" width = "300px" height = "300px" name = "iframe_box"></iframe>
+		<a href = "http://tcpschool.com/" target = "iframe_box">이동</a>
+	</body>
+</html>

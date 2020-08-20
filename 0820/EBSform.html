@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>EBS - 회원가입</title>
+		<style>
+			input[type = text], input[type = password]{width:200px; height:20px}
+			td:first-child{text-align:center; font-weight:bold; background-color : #e9e8ed; width: 40%; height:50px;}
+		</style>
+	</head>
+	<body>
+	<div style="width: 800px; margin:0 auto;">
+	<img alt="EBS로고이미지" src="../img/logo.JPG" style="vertical-align: middle;"><span style="vertical-align: middle;">회원가입</span>
+	<hr style="border:3px solid black">
+	<br>
+	<br>
+	<h2><img alt="정보입력로고 이미지" src="../img/logo2.JPG"><sup>정보입력 및 본인확인</sup></h2>
+		<form action="EBSform_finish.html" method="post">
+			<table border = "1" width = "800px">
+				<tr>
+					<td>아이디</td><td><input type="text" name="id">
+					<input type="button" value="중복확인" onclick="alert('사용 가능한 아이디 입니다.')"></td>
+				</tr>
+				<tr>
+					<td>비밀번호</td><td><input type="password" name="password"></td>
+				</tr>
+				<tr>
+					<td>비밀번호 확인</td><td><input type="password" name="password"></td>
+				</tr>
+				<tr>
+					<td>이름</td><td><input type="text" name ="name"></td>
+				</tr>
+				<tr>
+					<td>성별</td><td><input type="radio" name = "gender" value="male">남성
+									<input type="radio" name = "gender" value="female">여성
+									<input type="checkbox" name = "gender_info">선택정보(성별)수집 및 이용 동의</td>
+				</tr>
+				<tr>
+					<td>생년월일</td><td><select name = "year">
+											<option>2020</option>
+											<option>2019</option>
+											<option>2018</option>
+											<option>2017</option>
+											<option>2016</option>
+									   </select>년
+									   <select name = "month">
+									   		<option>08</option>
+									   		<option>09</option>
+									   		<option>10</option>
+									   		<option>11</option>
+									   		<option>12</option>
+									   </select>월
+									   <select>
+									   		<option>01</option>
+									   		<option>02</option>
+									   		<option>03</option>
+									   		<option>04</option>
+									   		<option>05</option>
+									   </select>일
+									   
+									   </td>
+				</tr>
+				<tr>
+					<td>이메일</td><td><input type="text" name="email">@<input type="text" name = "domain"></td>
+				</tr>
+				<tr>
+					<td>휴대폰</td><td><input type="text" name ="hp"><input type="checkbox" name = "hp_info">선택정보(휴대폰)수집 및 이용 동의</td>
+				</tr>
+				<tr>
+					<td>인증방법</td><td><input type="radio" name ="confirm" value="hp">휴대폰
+										<input type="radio" name="confirm" value="email">이메일
+										<input type="button" value="인증" onclick="alert('전송되었습니다');"></td>
+				</tr>
+				<tr>
+					<td>인증번호</td><td><input type="text" name ="confirm_check">
+					<input type="button" value="확인" onclick="alert('인증되었습니다')"></td>
+				</tr>
+			</table>
+			</div>
+			
+			<br>
+			<div style="text-align: center;">
+			<input type="submit" width = "50px" height ="30px" value="확 인">
+			</div>
+		</form>
+	</body>
+</html>

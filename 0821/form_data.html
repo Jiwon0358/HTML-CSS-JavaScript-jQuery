@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>form_data</title>
+	</head>
+	<body>
+		<form>
+		<!-- reset : 처음으로 되돌아 가는 것 , cursor:pointer 마우스를 올렸을 때 손가락 모양으로 바뀌도록 하는 기능 -->
+		<input type="reset" value="초기화" style="cursor: pointer;">
+		<!-- submit의 기능을 가진 이미지 버튼 -->
+		<input type="image" src = "../img/btn.png" width = "100px">
+		
+		<hr>
+		<!-- accept 옵션은 해당하는 파일만 선택할 수 있는 기능이다 -->
+		<input type="file" accept="image/jpg">
+		<hr>
+		<!-- 자기소개같은 이력서 입력할 때 사용 -->
+		<textarea rows="20" cols="20"></textarea>
+		<hr>
+		<!-- 입력하는 형식을 지정할 때 사용 (지금은 IE에서 잘 작동을 하지 않아서 잘 사용 안하고 있음. 나중에 IE가 제대로 작동한다면 사용 가능성 있음)-->
+		<input type="url" name = "url">
+		<input type="email" name="email">
+		<input type="tel" name="tel">
+		<input type="color" name="color">
+		<input type="date" name="date">
+		<input type="week" name="week">
+		<input type="number" name="number" min ="1" max="10" step="2"><!-- 두칸씩 뛰도록하는 기능-->
+		<input type="range" name="range" min ="1" max="10">
+		</form>
+		
+		<hr>
+		<fieldset>
+		<!-- 임의적으로 그룹으로 묶어 준것, legend는 그룹의 이름. 노출은 안됨, autocomplete : 캐시 데이터 안보이도록하는 것 / autofocus : 페이지가 딱 켜졌을 때 어디에 포커스를 맞출지 정함-->
+		<!-- placeholder : 뭘쓰는지 알려주는 기능(회색 바탕으로)   / readonly : 쓰지 못하고 읽게만 하도록 -->
+			<legend>인적사항입력</legend>
+			이름  : <input type="text" name="name" autocomplete="off" placeholder="이름을 작성해주세요"><br>
+			전화번호 : <input type="text" name="tel" autofocus value="010-0000-0000" readonly><br>
+		</fieldset>
+		<hr>
+		<!-- lable : 텍스트를 눌러도 라디오 버튼이 선택될 수 있도록 하는 기능 -->
+		<label for ="male">lable남성</label><input type="radio" name="gender" value="male" id ="male">남성<br>
+		<label for = "female">lable여성</label><input type="radio" name="gender" value="female" id = "female">여성
+		
+		<hr>
+		<form>
+		<!-- required : 반드시 입력해야만 액션페이지로 넘어 갈수 있다 -->
+		<input type="text" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" required>
+		<input type="submit" value="확인">
+		</form>
+		
+		
+		
+	</body>
+</html>

@@ -4,8 +4,12 @@
 		<meta charset="UTF-8">
 		<title>EBS - 회원가입</title>
 		<style>
-			input[type = text], input[type = password]{width:200px; height:20px}
+			input[type = text], input[type = password]{width:300px; height:20px}
 			td:first-child{text-align:center; font-weight:bold; background-color : #e9e8ed; width: 40%; height:50px;}
+			input[type = button]{border: 1px solid #3d7cc3;color: #3d7cc3;background: #FFF;font-size: 16px;}
+			input[type = submit]{color: #FFF;background: #042f6c;border: 1px solid #042f6c;font-size: 20px;}
+			table{border-collapse: collapse;}
+			p{color:#A500CF; font-size:12pt}
 		</style>
 	</head>
 	<body>
@@ -15,7 +19,7 @@
 	<br>
 	<br>
 	<h2><img alt="정보입력로고 이미지" src="../img/logo2.JPG"><sup>정보입력 및 본인확인</sup></h2>
-		<form action="EBSform_finish.html" method="post">
+		<form action="../0821/result.jsp" method="post">
 			<table border = "1" width = "800px">
 				<tr>
 					<td>아이디</td><td><input type="text" name="id">
@@ -25,7 +29,7 @@
 					<td>비밀번호</td><td><input type="password" name="password"></td>
 				</tr>
 				<tr>
-					<td>비밀번호 확인</td><td><input type="password" name="password"></td>
+					<td>비밀번호 확인</td><td><input type="password" name="password_check"></td>
 				</tr>
 				<tr>
 					<td>이름</td><td><input type="text" name ="name"></td>
@@ -37,7 +41,8 @@
 				</tr>
 				<tr>
 					<td>생년월일</td><td><select name = "year">
-											<option>2020</option>
+											<!-- value를 쓰지 않으면 2020년 이란 텍스트 그대로 넘어간다. value를 적어주면 value 값이 넘어간다 -->
+											<option value="2020">2020년</option>
 											<option>2019</option>
 											<option>2018</option>
 											<option>2017</option>
@@ -50,7 +55,7 @@
 									   		<option>11</option>
 									   		<option>12</option>
 									   </select>월
-									   <select>
+									   <select name = "day">
 									   		<option>01</option>
 									   		<option>02</option>
 									   		<option>03</option>
@@ -61,7 +66,8 @@
 									   </td>
 				</tr>
 				<tr>
-					<td>이메일</td><td><input type="text" name="email">@<input type="text" name = "domain"></td>
+					<td>이메일</td><td><input type="text" name="email" style = "width:200px">@<input type="text" name = "domain" style = "width : 200px">
+					<p>아이디나 비밀번호를 찾기위해 사용되오니 정확한 정보로 입력하시기 바랍니다.</p></td>
 				</tr>
 				<tr>
 					<td>휴대폰</td><td><input type="text" name ="hp"><input type="checkbox" name = "hp_info">선택정보(휴대폰)수집 및 이용 동의</td>

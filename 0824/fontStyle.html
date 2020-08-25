@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>폰트 스타일</title>
+		<link href="../css/public.css" rel="stylesheet">
+		
+		<script type="text/javascript">
+			//body가 생성된 후(window가 로드 됬을 때 실행해라) 실행해라  // 이게 있어야 스크립트가 body이후에 실행된다. 없다면 body보다 먼저 실행됨 
+			window.onload = function(){//callBack 백그라운드에서 자동으로 호출한다.
+				vp = document.querySelectorAll('p');//p태그인것들을 vp에 배열로 저장(여러개니까)
+			}
+			
+			//body가 생성된 후 호출했을 때 실행하겠다.
+			function proc1(){ //함수(메서드) 정의 
+				//div1안의 p태그를 선택
+				vp[0].style.color='blue';
+			}
+			function proc2(){ //함수(메서드) 정의 
+				//div2안의 p태그를 선택
+				vp[1].style.fontStyle='italic';
+			}
+			function proc3(){ //함수(메서드) 정의 
+				//div3안의 p태그를 선택
+				vp[2].style.fontWeight='bold';
+			}
+			function proc4(){ //함수(메서드) 정의 
+				//div4안의 p태그를 선택
+				vp[3].style.fontSize='2.0em';
+			}
+		</script>
+		
+	</head>
+	<body>
+		<div class="box">
+		<!-- 
+		 javascript : 기능부여
+		 html요소로 접근 방법 : (ESMA(표준넘버)4번) : 효율성이 좋고 빠르다
+			 				  document.getElementById('id이름')
+			 				  document.getElementsByTagName('태그이름') <여러개가 있을수 있어서 배열로 가져옴>
+			 				  document.getElementsByClassName('class이름')
+			 				  (ESMA(표준넘버)6번) : 사용하기 간편하다.
+			 				  document.querySelector('#id이름')
+			 				  document.querySelector('.class이름') <여러개 중에서 첫번째꺼 한개만 가져옴>
+			 				  document.querySelector('태그이름')
+			 				  document.querySelectorAll('class이름')<그래서 여러개가 있을 땐 SelectorAll로 가져오면 배열로 가져옴>
+			 				  document.querySelectorAll('태그이름')<그래서 여러개가 있을 땐 SelectorAll로 가져오면 배열로 가져옴>
+			 				
+			 				vp = document.querySelectorAll('p');  
+
+		  -->
+		
+		
+		
+		
+			<h3>font스타일</h3>
+			<div class ="dd" id="div1">
+				<input type="button" value="확인" id="b1" onclick="proc1()"> <!-- 함수(메서드) 호출 -->
+				<h2>vp[0].style.color='blue'</h2>
+				<p>코로나19 확진자가 급증하면서 지역사회 감염 차단을 위해 실시된 정부의 권고 수칙으로, 많은 사람들이 모이는 행사 및 모임 참가 자제, 외출 자제, 재택근무 확대 등이 이에 해당한다.</p>
+			</div>
+			<div class ="dd"  id="div2">
+				<input type="button" value="확인" id="b2" onclick="proc2()">
+				<h2>vp[1].style.fontStyle='italic'</h2>
+				<p>코로나19 확진자가 급증하면서 지역사회 감염 차단을 위해 실시된 정부의 권고 수칙으로, 많은 사람들이 모이는 행사 및 모임 참가 자제, 외출 자제, 재택근무 확대 등이 이에 해당한다.</p>
+			</div>
+			<div class ="dd"  id="div3">
+				<input type="button" value="확인" id="b3" onclick="proc3()">
+				<h2>vp[2].style.fontWeight='bold'</h2>
+				<p>코로나19 확진자가 급증하면서 지역사회 감염 차단을 위해 실시된 정부의 권고 수칙으로, 많은 사람들이 모이는 행사 및 모임 참가 자제, 외출 자제, 재택근무 확대 등이 이에 해당한다.</p> 
+			</div>
+			<div  class ="dd" id="div4">
+				<input type="button" value="확인" id="b4" onclick="proc4()">
+				<h2>vp[3].style.fontSize='2.0em'</h2>
+				<p>코로나19 확진자가 급증하면서 지역사회 감염 차단을 위해 실시된 정부의 권고 수칙으로, 많은 사람들이 모이는 행사 및 모임 참가 자제, 외출 자제, 재택근무 확대 등이 이에 해당한다.</p>
+			</div>
+		</div>
+	</body>
+</html>

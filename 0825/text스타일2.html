@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<style type="text/css">
+			.box > h1{
+				/* 그림자효과 */
+				text-shadow: 5px 5px 10px gray;
+			}
+			textarea{
+				/*글자가 써지는 위치   rtl = righe -> left*/
+				direction: rtl;
+			}
+			#div3 #h1{
+				/*전체 대문자로*/
+				text-transform: uppercase;
+			}
+			#div3 #h2{
+				/*전체 소문자로*/
+				text-transform: lowercase;
+			}
+			#div3 #h3{
+				/*쓴 모양 그대로*/
+				text-transform: capitalize;
+			}
+			
+		
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<pre>
+				text-shadow : x,y,선명한정도, 색상
+				ex) text-shadow : 30px 50px 20(숫자가 낮을수록 선명)px red;
+			</pre>
+			<h1>text스타일</h1>
+			<div class ="dd" id="div1">
+				<p>코로나19 확진자가 급증하면서 지역사회 감염 차단을 위해 실시된 정부의 권고 수칙으로, 많은 사람들이 모이는 행사 및 모임 참가 자제, 외출 자제, 재택근무 확대 등이 이에 해당한다.</p>
+			</div>
+			
+			<div class ="dd" id="div2">
+				<h2>direction: rtl</h2>
+				<textarea rows="20" cols="60"></textarea>
+			</div>
+			
+			<div class ="dd" id="div3">
+				<p>text-transform: uppercase;</p>
+				<h1 id = "h1">Hello, World!</h1>
+				<p>text-transform: lowercase;</p>
+				<h1 id = "h2">Hello, World!</h1>
+				<p>text-transform: capitalize;</p>	
+				<h1 id = "h3">Hello, World!</h1>
+			</div>
+		
+		
+		</div>
+		
+	</body>
+</html>

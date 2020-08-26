@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<style type="text/css">
+		.box{
+			height: 1000px;
+		}
+		.box #result1, .box div{
+			width: 200px;
+			height:350px;
+			float : left;
+			border : 1px solid red;
+			padding : 10px;
+			margin : 5px;
+			overflow: auto; 
+		
+		}
+		#result2 ul{/*하얀 동그라미*/
+			list-style-type: circle;
+			list-style-position: outside;/*기본은 outside고 inside도 있다*/
+			border : 1px solid red;
+			
+		}
+		#result2 ul li{/*하얀 동그라미*/
+			
+			
+		}
+		
+		#result3 ul{/*검은 네모*/
+			list-style-type: square;
+		}
+		#result4 ul{/*검은 네모*/
+			list-style-image: url("../img/logo2.JPG");
+		}
+		hr{
+			clear : both;
+		}
+		#result6 ol{/*알파벳 순서대로 나오게 하는 것*/
+		list-style-type: lower-alpha;
+		
+		}
+		#result5 ol{/*01, 02, 03....*/
+			list-style-type: decimal-leading-zero;
+		}
+		#result7 ol{/*가 나 다..*/
+		list-style-type: hangul;
+		}
+		#result8 ol{/*일 이 삼 사*/
+		list-style-type: korean-hangul-formal;
+		}
+		#result9 ol{/*ㄱ ㄴ ㄷ ㄹ ...*/
+		list-style-type: hangul-consonant;
+		}
+		
+		
+		</style>
+ 	</head>
+
+	<body>
+		
+		<div class="box">
+			<h3>listStyle</h3>
+			<input type="button" value="확인">
+			<p></p>
+			<div id="result1">
+				<h3>list-style-type : disc(기본)</h3>
+				<ul>
+					<li>개나리</li>
+					<li>진달래</li>
+					<li>무궁화</li>
+					<li>라일락</li>
+					<li>수선화</li>
+				</ul>
+			</div>
+			<div id="result2">
+				<h3>list-style-type : circle</h3>
+				<ul>
+					<li>개나리</li>
+					<li>진달래</li>
+					<li>무궁화</li>
+					<li>라일락</li>
+					<li>수선화</li>
+				</ul>
+			</div>
+			<div id="result3">
+			<h3>list-style-type: square</h3>
+				<ul>
+					<li>개나리</li>
+					<li>진달래</li>
+					<li>무궁화</li>
+					<li>라일락</li>
+					<li>수선화</li>
+				</ul>
+			</div>
+			<div id="result4">
+			<h3>list-style-image: url("../img/logo2.JPG")</h3>
+				<ul>
+					<li>개나리</li>
+					<li>진달래</li>
+					<li>무궁화</li>
+					<li>라일락</li>
+					<li>수선화</li>
+				</ul>
+			</div>
+			<hr>
+			<div id="result5">
+			<h3>	list-style-type: decimal-leading-zero</h3>
+				<ol>
+					<li>개나리</li>
+					<li>진달래</li>
+					<li>무궁화</li>
+					<li>라일락</li>
+					<li>수선화</li>
+				</ol>
+			</div>
+			<div id="result6">
+			<h3>list-style-type: lower-alpha;</h3>
+				<ol>
+					<li>개나리</li>
+					<li>진달래</li>
+					<li>무궁화</li>
+					<li>라일락</li>
+					<li>수선화</li>
+				</ol>
+			</div>
+			<div id="result7">
+			<h3>list-style-type: hangul;</h3>
+				<ol>
+					<li>개나리</li>
+					<li>진달래</li>
+					<li>무궁화</li>
+					<li>라일락</li>
+					<li>수선화</li>
+				</ol>
+			</div>
+			<div id="result8">
+			<h3>list-style-type: korean-hangul-formal;</h3>
+				<ol>
+					<li>개나리</li>
+					<li>진달래</li>
+					<li>무궁화</li>
+					<li>라일락</li>
+					<li>수선화</li>
+				</ol>
+			</div>
+			<div id="result9">
+			<h3>list-style-type: hangul-consonant;</h3>
+				<ol>
+					<li>개나리</li>
+					<li>진달래</li>
+					<li>무궁화</li>
+					<li>라일락</li>
+					<li>수선화</li>
+				</ol>
+			</div>
+		</div>
+	</body>
+</html>

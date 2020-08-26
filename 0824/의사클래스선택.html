@@ -30,7 +30,7 @@
 			
 			
 			table{
-				
+				 border-collapse: collapse;  /*테이블의 선이 두줄 처럼 보이는 것을 없애는 것*/
 			}
 			td{
 				width : 200px;
@@ -38,11 +38,11 @@
 				text-align : center;
 			}
 			tr:nth-child(even){ /* even -> 짝수 */
-				background : lightblue;
+				background : lightblue; 
 				
 			}
 			tr:nth-child(odd){  /* odd -> 홀수 */
-				background : lightgray;
+			 	background : lightgray; 
 			}
 			tr:nth-child(2n-1){
 				background : black;
@@ -64,6 +64,12 @@
 			}
 			h3[title]{
 				background : skyblue;
+			}
+			caption{
+				margin: 30px auto;
+				caption-side: bottom; /*캡션의 위치*/
+				font-size: 1.5em;
+			
 			}
 		
 		</style>
@@ -91,16 +97,26 @@
 		</div>
 		
 		<div class = "box">
+
 			<h3>2.의사 클래스</h3>
 			상태나 구조에 의한 선택이 이루어진다<br>
 			<!--  link 처음   / visited 링크를 갔다 오면 / hover 마우스 올려놓으면   / hover 누를 때 -->
 			상태 -> :link :visited :hover :active<br>
 			구조 -> :nth-child(index) nth-child(even) nth-child(odd) :nth-child(2n-1)<br>
 			<input type="button" value="확인">
+			
 			<br>
+			<br>
+			테두리 합치기 border-collapse: collapse;
+			테이블 제목 &lt;caption&gt;VIP리스트&lt;/caption&gt;
+			<br>
+			<br>
+			
+			
 			<div id = "result1">
 			구조에 의한 선택 <br><br>
 			<table border = "1">
+			<caption>VIP리스트</caption>
 				<tr>
 					<td>이름</td>
 					<td>주소</td>

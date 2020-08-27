@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+	<style>
+	.box div{
+	width : 200px;
+	height : 100px;
+	margin : 50px;
+	padding : 20px;
+	border : 2px solid orange;
+	}
+	
+	#res2{
+		position : relative;/*상대위치*/
+		top : 100px; /*위에서 아래로  100px만큼 내려옴*/
+	}
+	#res3{
+		position : absolute; /*절대 위치*//*화면의 꼭대기*/
+		top : 300px;
+		left : 300px;
+	}
+	#fixed{
+		position : fixed;
+		top : 500px;
+		right : 50px;
+	}
+	</style>
+	
+	
+	</head>
+	<body>
+		
+		<div class="box">
+			<h1>위치설정</h1>
+			<h3>&lt;정적위치&gt;</h3>
+			정상적인 흐름에 의한 배치
+			<div>res</div>
+			<div>res</div>
+			<div id = "fixed">
+				고정위치<br>
+				position : fixed;<br>
+				top : 500px;<br>
+				right : 50px;<br>
+			</div>
+			<div>res</div>
+			<hr>
+			<div id="res1">res1</div>
+			<div id="res2">
+			상대위치<br> 
+			position : relative;<br> 
+			top : 100px;<br> 
+			</div>
+			<div id="res3">
+					절대위치<br>
+					position : absolute;<br> 
+					top : 300px;<br>
+					left : 300px;
+			</div>
+			<div id="res4">res4</div>
+			<pre>
+정적위치 : 정상적인 흐름에 따라서 배치된다.
+상대위치 : 정상적인 흐름의 위치에서 변경한다.
+절대위치 : 윈도우 컨테이너의 시작점에서 위치를 조절한다.
+고정위치 : 윈도우 컨테이너의 시작점에서 위치를 조절한다.
+		화면이 스크롤되어도 항상 고정된 위치로 존재한다
+			</pre>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+		body{
+			min-width: 700px;
+		}
+		header, section, nav, footer{
+		margin : 5px;
+		box-sizing : border-box;
+		border-radius : 50px;
+		}
+		header{
+			width : calc(100% - 1%);
+			height : 250px;
+			background: #c4a2f5;
+			text-align: center;
+			padding : 30px;
+			font-size: 20px;
+			
+		}
+		section{
+			width : calc(70% - 1%);
+			height : 500px;
+			background: #f9c7ff;
+			float : right;
+			
+		}
+		nav{
+			background: #f9c7ff;
+			width : calc(29% - 1%);
+			height : 500px;
+			float : left;
+			padding : 20px;
+		}
+		footer{
+			background: #c4a2f5;
+			width : calc(100% - 1%);
+			height : 100px;
+			clear : both;
+			font-size: 20px;
+			padding : 30px;
+			text-align: center;
+			
+		}
+		#sectionbox{
+			background: white;
+			margin : 40px;
+			padding : 20px;
+			border : 2px dotted #c4a2f5;
+			border-radius : 50px;
+			font-size: 20px;
+			
+		}
+		h1{
+			font-size: 50px;
+		}
+		img{
+			width : calc(70% - 1%);
+			margin : 30px;
+			height: 200px;
+		}
+		a{
+			font-size: 20px;
+		}
+		a:link{
+			color : white;
+			text-decoration : none;
+		}
+		a:visited{
+			color : yellow;
+			text-decoration : none;
+		}
+		a:hover{
+			background : #c4a2f5;
+		}
+}
+		
+		</style>
+	</head>
+	<body>
+		<header>
+		<h1>My Blog Page</h1>
+		시멘틱 태그로 만들어진 져닝의 페이지 입니다.
+		</header>
+		
+		<nav>
+		<h2>Links</h2>
+		<ul>
+			<li><a href="https://www.w3schools.com/"><b>w3schools</b></a></li>
+			<li><a href="https://www.naver.com/"><b>Naver</b></a></li>
+			<li><a href="https://www.google.co.kr/"><b>Google</b></a></li>
+		</ul>
+			<img alt="강아꼼 사진" src="../img/aggom.png">
+		</nav>
+		
+		
+		<section>
+		<div id = "sectionbox">
+			<h3>Semantic Tags</h3>
+			시멘틱 요소(Semantic elements)들은 브라우저에게 요소의 의미나 목적을
+			명확하게 알려주는 요소이다. 레이아웃을 만들때 쓰는 것. 의미가 있는 요소라면
+			div보다는 시멘틱 태그를 사용해준다.
+		</div>
+		<div id = "sectionbox">
+			<h3>div와 span</h3>
+			div은 "divide"의 약자로서 페이지를 논리적인 섹션으로 분리하는데 사용되는 태그이다.
+			span요소는 인라인 요소로서 텍스트를 위한 컨테이너로 사용할 수 있다.
+		</div>
+		</section>
+		
+		<footer>
+			Copyright (c)2020 Kang
+		</footer>
+
+	</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<style type="text/css">
+		span{
+			/*인라인 요소라서 가로 세로 지정 불가능.*/
+			background : yellow;
+			display :  block; /*display :  block => 인라인 요소를 블럭으로 만들어 가로세로 지정이 가능해짐, inline-block => 줄바꿈을 안하는 블럭요소(가로세로는 지정가능) */
+			width : 50%;
+			height : 100px;
+		}
+		p{
+			background : pink;
+			width : 50%;
+			height : 60px;
+		}
+		.box #result1{
+			display : none; /**/
+		}
+		</style>
+		<script type="text/javascript">
+			
+			window.onload = function(){
+			//이렇게하면 함수에서 해당 내용이 다 적용 됨(static같은 느낌)
+			
+			//id가 result1인 요소를 설정
+			//res1 = document.getElementById('result1');
+			 res1 = document.querySelector('#result1');
+			//var res1 = document.querySelector('#result1'); var의 위치가 {}안이라서 지역변수가 된다. 그래서 아래서 못씀 
+			
+			//span태그와 p태그 설정
+			//vsp = document.getElementsByTagName("span");
+			//결과 : vsp는 배열 vsp[0]
+			vsp = document.querySelector('span');
+			//vp = document.getElementsByTagName("p");
+			//결과 : vp는 배열 vp[0]
+			vp = document.querySelector('p');
+			}
+		
+		function proc1(){
+
+			res1.style.display = "block";
+			vsp.style.display = "none";
+			vp.style.display = "none";
+			
+		}
+		
+		function proc2(){
+
+			res1.style.display = "none";
+			vsp.style.display = "block";
+			vp.style.display = "inline";
+			
+		}
+		
+		
+		</script>
+		
+		
+		
+	</head>
+	<body>
+		
+		<div class="box">
+			<h3>display</h3>
+			display : none;<br> <!-- 화면에 안보이도록 -->
+			display : block;<br><!-- 블럭 요소로 만듬 -->
+			display : inline;<br><!-- 인라인 요소로 만듬 -->
+			display : inline-block;<br> <!-- 가로세로는 조정가능하고(블럭특징), 줄바꿈은 안되도록(인라인특징) -->
+			<br>
+			확인버튼 클릭하면 div id = result1인 요소를 보이게 하고,
+			span과 p 태그는 안보이게 한다.
+			
+			<input type="button" value="확인" onclick="proc1()">
+			<input type="button" value="확인" onclick="proc2()">
+			<span>무궁화 꽃이 피었습니다.</span>
+			<p>무궁화 꽃이 피었습니다.</p>
+			<div id="result1"></div>
+		</div>
+	</body>
+</html>

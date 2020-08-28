@@ -1,0 +1,84 @@
+@CHARSET "UTF-8";
+		nav, #left, #right, section, footer { margin:5px; }
+		
+		nav {
+			height : 60px;
+			border : 2px solid #D90707;
+			padding : 0px 220px;
+		}
+		
+	 	nav li{
+			float: left;
+			list-style-type: none;
+			margin : 0px 100px;
+			margin-top : auto; 
+			margin-bottom : auto;
+			font-size: 20px;
+		}
+		#left{
+			float: left;
+			width : calc(20% - 1%);
+			height : 500px;
+			border : 2px solid #D90707;
+			background: #D90707;
+			
+		}
+		#left h3{
+			text-align: center;
+			color: white;
+			border-bottom: 2px solid white;
+			height : 50px;
+			letter-spacing: 20px;
+			font-size: 25px;
+		}
+		
+		#left p{
+			color : white;
+			font : bold;
+		 	margin-top : 30px;
+			text-align: center;
+			letter-spacing: 10px;
+			font-size: 20px;
+		}
+		#right{
+			float: right;
+			width : calc(20% - 1%);
+			height : 460px;
+			border : 2px solid #D90707;
+			font-size: 20px;
+			background: white;
+			padding : 20px;
+		}
+		#shopcart, #login{
+			margin-bottom: 50px;
+		}
+		#idpassword{
+			border : 2px dotted #D90707;
+			font: bold;
+			padding : 10px;
+		}
+		#button{
+			float : right;
+		}
+		#joinAndpassword{
+			clear : both;
+		}
+		footer{
+			clear : both;
+			border : 2px solid #D90707;
+			text-align: center;
+			padding : 15px;
+		}
+		section{
+			border : 2px solid #D90707;
+			width : 56.5%;
+			height : 500px;
+			float:left;
+			margin-left: 10px;
+		}
+	 	iframe{
+	 		border:0px;
+	 		width:100%;
+	 		height : 500px;
+		}
+ 

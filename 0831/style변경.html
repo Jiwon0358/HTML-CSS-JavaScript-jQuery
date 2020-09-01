@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<style type="text/css">
+			#test{
+			color : red;
+			}
+		</style>
+		<script type="text/javascript">
+			function proc1(){
+				//id가 test인 요소의 글자색 변경
+				v1 = document.querySelector("#test");
+				
+				//난수발생
+				vr = Math.floor(Math.random()*256) //Math.floor : Math에 들어있는 내림 함수
+				vg = Math.floor(Math.random()*256) //parseInt도 가능
+				vb = Math.floor(Math.random()*256) //
+				
+				
+				//16진수로 변환 방법
+				vr16 = vr.toString(16);
+				vg16 = vg.toString(16);
+				vb16 = vb.toString(16);
+				
+				//v1.style.color = 'rgb('+ vr +','+vg+','+vb+')'; //기본일때
+				
+				v1.style.color = '#'+ vr16+vg16+vb16; //16진수 일때
+				
+				
+				//f12눌렀을 때 뜨는 콘솔창에 띄워라.
+				console.log(vr +','+vg+','+vb);
+				console.log(vr16 +','+vg16+','+vb16);
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		
+		<div class="box">
+			<h3>스타일 변경</h3>
+			버튼을 클릭하면 id가 test인 요소의 글자색을 변경<br>
+			v1 = document.getElementById("test"); or v1 = document.querySelector("#test");<br>
+			v1.style.color = "색상"<br>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="result1">
+				<h1 id="test">Hello World</h1>
+			
+			</div>
+		</div>
+	</body>
+</html>

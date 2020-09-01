@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>쇼핑카트</title>
+		<style type="text/css">
+		body{
+			width : 700px;
+			font-size: 20px;
+			margin : auto;
+			margin-top: 200px;
+		}
+		table{
+		border : 2px solid #D90707;
+		width : 700px;
+		padding : 10px;
+		border-collapse: collapse;
+		}
+		caption{
+			margin : 15px;
+		}
+		td{
+		text-align:center;
+		height : 50px;
+		}
+		div{
+			text-align: center;
+		}
+		input[type=button], input[type=reset]{
+			border :2px solid #D90707;
+			background: #D90707;
+			color : white;
+			width : 100px;
+			height : 45px;
+			font-size: 20px;
+			margin-top: 5px;
+		}
+		a{
+			color : black;
+			text-decoration : none;
+		}
+		a:hover{
+			color : white;
+			background: #D90707;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<form action="../webshop/main.html" method="post">
+			<table border="1">
+				<caption><strong>Shopping Cart</strong></caption>
+				<tr>
+					<th>품목</th><th>가격</th><th>수량</th><th>합계</th>
+				</tr>
+				<tr>
+					<td>컴퓨터 세트</td><td>2,000,000원</td><td>
+					<input type="number" value="0"></td><td><input type="text" value="0"></td>
+				</tr>
+				<tr>
+					<td>티셔츠</td><td>50,000원</td><td>
+					<input type="number" value="0"></td><td><input type="text" value="0"></td>
+				</tr>
+				<tr>
+					<td>음악 파일</td><td>1,000원</td><td>
+					<input type="number" value="0"></td><td><input type="text" value="0"></td>
+				</tr>
+				<tr>
+					<td>영화 파일</td><td>5,000원</td><td>
+					<input type="number" value="0"></td><td><input type="text" value="0"></td>
+				</tr>
+			</table>
+				<div>
+				<input type="button" value="계 산"> <input type="button" value="구 매"> <input type="reset"  value="초기화">
+				</div>
+				<a href="main.html">Back to Home</a>
+		</form>
+	</body>
+</html>

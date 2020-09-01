@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		
+		<script type="text/javascript">
+			function proc1(){
+				
+				//입력받기
+				var value1 = prompt("정수로 입력하세요","1~100사이");
+				var value2 = prompt("정수로 입력하세요","1~100사이");
+				
+				sumstr = value1 + value2; //이렇게하면 string으로 나옴
+				sum = parseInt(value1) + parseInt(value2);
+				
+				//출력
+				vr1 = document.querySelector("#result1");
+				vr1.innerHTML = "입력 1 : " + value1 + "<br>";
+				vr1.innerHTML += "입력 2 : " + value2 + "<br>";
+				vr1.innerHTML += "결과 : " + sumstr + "<br>";
+				vr1.innerHTML += "결과 : " + sum + "<br>";
+			}
+			
+			function proc2(){
+				
+				 var value1 = prompt("정수 입력1","1~100사이");
+				 var value2 = prompt("연산자 입력","+,-,*,/");
+				 var value3 = prompt("정수 입력2", "1~100사이");
+				 
+				 
+/* 				 if 문
+				 if(value2 == "+"){ //javascript에서는 equals 사용 불가능
+					result = parseInt(value1) + parseInt(value3);
+				 }else if(value2 == "-"){
+					result = value1 - value3; //+는 string에도 +가 있어서 parseInt를 써야 하지만 나머지 -,*,/는 안써도 가능하다.
+				 }else if(value2 == "*"){
+					result = parseInt(value1) * parseInt(value3);
+				 }else if(value2 == "/"){
+					result = parseInt(value1) / parseInt(value3); //javascript에서는 정수 나누기 정수라고 하더라도 소수점까지(double형)으로 나온다. 그래서 정수를 쓰고 싶다면 앞에 parseInt()를써야함
+				 } */
+				 
+				 
+				 
+				 //switch문
+				 switch(value2){
+				 case "+" :
+					 result = parseInt(value1) + parseInt(value3);
+					 break;
+				 case "-" :
+					 result = value1 - value3;
+					 break;
+				 case "*" :
+					 result = parseInt(value1) * parseInt(value3);
+					 break;
+				 case "/" :
+					 result = parseInt(value1) / parseInt(value3);
+					 break;
+				 }
+				 
+				 vr2 = document.querySelector("#result2");
+				 vr2.innerHTML = value1 + value2 + value3 +"="+ result;
+				 
+				 
+			}
+		
+		</script>
+		
+	</head>
+	<body>
+		
+		<div class="box">
+			<h3>입력받는 함수</h3>
+			prompt("입력하세요"(필수),"1234"(생략)); <br>
+			paramater1 : 필수 <br>
+			paramater2 : 선택 <br>
+			return결과형 : string <br><br>
+			
+			return결과값을 정수로 변환 후 덧셈연산을 한다.<br>
+			parseInt(입력값)<br>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="result1"></div>
+		</div>
+		
+		<div class="box">
+			<h3>입력받는 함수</h3>
+			정수2개와 연산자1개 입력 받아 연산의 결과 출력<br>
+			입력 : prompt("정수1")<br>
+			출력 : result2<br>
+			
+			parseInt(입력값)<br>
+			<input type="button" value="확인" onclick="proc2()">
+			<div id="result2"></div>
+		</div>
+		
+		
+	</body>
+</html>

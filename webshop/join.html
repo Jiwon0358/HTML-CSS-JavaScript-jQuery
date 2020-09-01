@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>회원가입</title>
+		<style type="text/css">
+		body{
+			width : 700px;
+			font-size: 20px;
+			margin : auto;
+			margin-top: 150px;
+		}
+		table{
+		border : 2px solid #D90707;
+		width : 700px;
+		padding : 10px;
+		border-collapse: collapse;
+		}
+		caption{
+			margin : 15px;
+		}
+		td:first-child{
+		text-align:center;
+		height : 50px;
+		}
+		div{
+			text-align: center;
+		}
+		input[type=reset], input[type=submit]{
+			border :2px solid #D90707;
+			background: #D90707;
+			color : white;
+			width : 100px;
+			height : 45px;
+			font-size: 20px;
+			margin-top: 5px;
+		}
+		</style>
+	</head>
+	<body>
+		<form action="main.html" method="post">
+			<table border="1">
+				<caption><strong>회 원 정 보 입 력</strong></caption>
+				<tr>
+					<td>아이디</td><td><input type="text" name="id">
+					<input type="button" value="중복확인" onclick="alert('사용 가능한 아이디 입니다.')"></td>
+				</tr>
+				<tr>
+					<td>비밀번호</td><td><input type="password" name="password">
+				</tr>
+				<tr>
+					<td>비밀번호 확인</td><td><input type="password" name="password">
+				</tr>
+				<tr>
+					<td>이름</td><td><input type="text" name="name">
+				</tr>
+				<tr>
+					<td>성별</td><td><input type="radio" name="gender" value="male">남성<input type="radio" name="gender" value="female">여성
+				</tr>
+								<tr>
+					<td>생년월일</td><td><select name = "year">
+											<!-- value를 쓰지 않으면 2020년 이란 텍스트 그대로 넘어간다. value를 적어주면 value 값이 넘어간다 -->
+											<option value="2020">2020년</option>
+											<option>2019</option>
+											<option>2018</option>
+											<option>2017</option>
+											<option>2016</option>
+											<option>2015</option>
+											<option>2014</option>
+											<option>2013</option>
+											<option>2012</option>
+											<option>2011</option>
+											<option>2010</option>
+											<option>2009</option>
+											<option>2008</option>
+											<option>2007</option>
+											<option>2006</option>
+											<option>2005</option>
+											<option>2004</option>
+											<option>2003</option>
+											<option>2002</option>
+											<option>2001</option>
+											<option>2000</option>
+											<option>1999</option>
+											<option>1998</option>
+									   </select>년
+									   <select name = "month">
+									   		<option>01</option>
+									   		<option>02</option>
+									   		<option>03</option>
+									   		<option>04</option>
+									   		<option>05</option>
+									   		<option>06</option>
+									   		<option>07</option>
+									   		<option>08</option>
+									   		<option>09</option>
+									   		<option>10</option>
+									   		<option>11</option>
+									   		<option>12</option>
+									   </select>월
+									   <select name = "day">
+									   		<option>01</option>
+									   		<option>02</option>
+									   		<option>03</option>
+									   		<option>04</option>
+									   		<option>05</option>
+									   		<option>06</option>
+									   		<option>07</option>
+									   		<option>08</option>
+									   		<option>09</option>
+									   		<option>10</option>
+									   		<option>11</option>
+									   		<option>12</option>
+									   		<option>13</option>
+									   		<option>14</option>
+									   		<option>15</option>
+									   		<option>16</option>
+									   		<option>17</option>
+									   		<option>18</option>
+									   		<option>19</option>
+									   		<option>20</option>
+									   		<option>21</option>
+									   		<option>22</option>
+									   		<option>23</option>
+									   		<option>24</option>
+									   		<option>25</option>
+									   		<option>26</option>
+									   		<option>27</option>
+									   		<option>28</option>
+									   		<option>29</option>
+									   		<option>30</option>
+									   </select>일 
+									   </td>
+				</tr>
+				<tr>
+					<td>이메일</td><td><input type="text" name="email">@<input type="text" name = "domain" ></td>
+				</tr>
+				<tr>
+					<td>휴대폰</td><td><input type="text" name ="hp">
+				</tr>
+			</table>
+				<div>
+				<input type="submit" value="제 출"> <input type="reset"  value="초기화">
+				</div>
+		
+		</form>
+		
+	</body>
+</html>

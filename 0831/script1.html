@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>스크립트</title>
+		<link href="../css/public.css" rel="stylesheet">
+		
+		<script type="text/javascript">
+			//자바 스크립트는 public void proc1() 이 아니다. 리턴타입 같은게 없음 
+			function proc1(){
+				alert("Hello"); //창에 내용 뜰 수 있도록 하는 것
+				//date 객체 생성
+				var now = new Date(); //Date var = new Date()와 같은 맥락
+			//	document.write(now) //새로운 document를 만듬(새로운 페이지를 만듬) 그래서 document.write는 잘 안씀
+				
+				//html요소  id가 result1인 요소를 검색
+			//	document.querySelector("#result1"); //querySelector는 아이디,클래스 등등 어떤건지 찾을 수 있어서 #을 붙여서 아이디인걸 알려줘야함.
+				let vres =	document.getElementById("result1"); //getElementById는 아이디를 찾는다고 이미 해놨으니 #을 안써도 됨.
+				vres.innerHTML = now; //해당 변수가 있는 HTML(대문자니까 조심)에 (result1 아이디가) 있는 곳에 출력해라 라는 뜻.
+				
+			}
+			
+			function proc2(){
+				
+				now = new Date();
+				
+				datetime = now.toLocaleString();
+				date = now.toLocaleDateString();
+				time = now.toLocaleTimeString();
+				
+				
+				vr2 = document.getElementById("result2");
+				
+				vr2.innerHTML = "toLocaleString() : " + datetime + "<br>";
+				vr2.innerHTML += "toLocaleDateString() : " + date + "<br>"; //=으로하면 덮어쓰기가 됨.
+				vr2.innerHTML += "toLocaleTimeString() : " + time; //=으로하면 덮어 쓰기가 됨.
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		
+		<div class="box">
+			<h3>내부 스크립트1</h3>
+			변수선언 : var 변수명; or let 변수명; or const 변수명;(모두 지역변수) 변수명;(전역변수, 해당 HTML어디서든 사용 가능, 그러나 전역변수가 있는 메서드가 먼저 실행되어야함) #var가 제일 많이 쓰이지만 let을 권장함<br>
+			now = new Date()<br>
+			<input type="button" value="확인" onclick="proc1()"><!-- ()꼭 붙여야함 -->
+			<div id="result1"></div>
+		</div>
+		
+		<div class="box">
+			<h3>내부 스크립트1</h3>
+			날짜 형식 변경<br>
+			now.toLocaleString() / 날짜 + 시간<br>
+			now.toLocaleDateString() / 날짜만<br> 
+			now.toLocaleTimeString() / 시간만<br>
+			출력<br>
+			vr2 = document.getElementById("result2");
+			vr2.innerHTML = 내용속에 html태그를 가지고 있을 때
+			vr2.textContent = 내용속에 html태그가 없을 때.(태그가 있으면 태그가 글자 그대로 찍힘.)
+			<input type="button" value="확인" onclick="proc2()"><!-- ()꼭 붙여야함 -->
+			<div id="result2"></div>
+		</div>
+	</body>
+</html>

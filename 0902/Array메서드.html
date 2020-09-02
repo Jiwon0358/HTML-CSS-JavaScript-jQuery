@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		
+		<script type="text/javascript">
+		arr = ["복숭아~","오렌쥐~","샤인머스캣","사과","복숭아~","메론","참외","오렌쥐~", "복숭아~"];
+		//첫번째 위치
+		function proc1(){
+			idx = arr.indexOf("사과");
+			
+/*  		res = "찾는 문자열 : " + "사과 <br>";
+			res += idx + "번째에 있습니다.<br>"
+			document.querySelector("#result1").innerHTML = res;  */
+			
+			//입력해서 찾기 - prompt(); 
+			str = prompt("찾는 문자열 입력 ");
+			
+			idx = arr.indexOf(str);
+			res = "찾는 문자열 : " + str + "은 ";
+			
+			if(idx < 0){
+				res += "없는 문자열 입니다 <br>"
+			}else{
+				res += idx + "번째에 있습니다.<br>"
+			}
+			
+			document.querySelector("#result1").innerHTML = res;
+			
+		}
+		
+		//마지막 위치
+		function proc2(){
+			//입력해서 찾기 - prompt(); 
+			str = prompt("찾는 문자열 입력 ");
+			idx = arr.lastIndexOf(str);
+			res = "찾는 문자열 : " + str + "은 ";
+			
+			if(idx < 0){
+				res += "없는 문자열 입니다 <br>"
+			}else{
+				res += idx + "번째에 있습니다.<br>"
+			}
+			document.querySelector("#result2").innerHTML = res;
+		}
+		
+		//겹치는 위치 모두다 찾는 메서드
+		function proc3(){
+			
+			//입력해서 찾기 - prompt(); 
+			str = prompt("찾는 문자열 입력 ");
+			idx = 0;
+			res = "찾는 문자열 : " +str + "은 ";
+			check = true;
+			
+				while(true){
+					idx = arr.indexOf(str, idx);
+					if(idx == -1){
+						break;
+					}
+					res += idx + " ";
+					idx++;
+					check = false;
+				}
+				if(check){
+					res += "없는 문자열 입니다."
+				}else{					
+					res += "번째에 있습니다.<br>"
+				}
+			document.querySelector("#result3").innerHTML = res;
+		}
+		
+		</script>
+	
+	</head>
+	<body>
+		
+		<div class="box">
+			<h3>배열(리스트)에서 요소찾기</h3>
+			arr = ["복숭아~","오렌쥐~","샤인머스캣","사과","복숭아~","메론","참외","오렌쥐~", "복숭아~"];
+				0,4,8  = 복숭아가 겹침
+				1,7 = 오렌쥐가 겹침
+			indexOf(item, start) : item의 위치를 찾는다 (겹치면 첫번째 찾는 것을 반환)<br>
+			lastIndexOf(item, start) : 마지막 item의 위치를 찾는다 <br>
+			<input type="button" value="indexOf" onclick="proc1()">
+			<input type="button" value="lastIndexOf" onclick="proc2()">
+			<input type="button" value="indexOf - start를 지정해서 겹치는 거 모두 찾기" onclick="proc3()">
+			<div id="result1"></div>
+			<div id="result2"></div>
+			<div id="result3"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+		function proc1(){
+			
+			//배열 선언
+			people = new Array();
+			
+			while(true){
+				//입력
+				userNm = prompt("사람이름을 입력하세요");
+				
+				//입력한 값 비교 - break조건(공백 or 취소버튼(null))
+				if(userNm == null || userNm == ""){
+					break;
+				}
+				//입력한 값을 배열에 저장
+				people.push(userNm);
+			}
+			//출력
+			document.querySelector("#result1").innerHTML = people;
+		}
+		
+		function proc2(){
+			
+			numList = [];
+			
+			while(numList.length < 5){
+				num = prompt("중복되지 않는 정수 5개를 입력하세요");
+				
+				check = numList.indexOf(num);
+				
+				if(check < 0){
+					numList.push(num);
+				}
+			}
+			document.querySelector("#result2").innerHTML = numList;
+			
+		}
+		
+		</script>
+	</head>
+	<body>
+		
+		<div class="box">
+			<h3>연습 1</h3>
+			사람 이름을 계속 입력 받아 배열에 저장하고<br> 
+			그 저장된 이름을 출력하는 프로그램을 작성하시오.<br>
+			입력 : prompt<br>
+			종료 : 공백문자나 취소버튼 클릭<br>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="result1"></div>
+		</div>
+		
+		<div class="box">
+			<h3>연습 2</h3>
+			서로 중복되지 않는 정수 5개를 입력 받아 출력하는 프로그램을 작성하시오.<br>
+			입력 : prompt<br>
+			종료 : 공백문자나 취소버튼 클릭<br>
+			<input type="button" value="확인" onclick="proc2()">
+			<div id="result2"></div>
+		</div>
+	</body>
+</html>

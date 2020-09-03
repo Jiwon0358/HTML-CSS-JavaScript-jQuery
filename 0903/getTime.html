@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+		now = new Date();
+		
+		function proc1(){
+			myday = new Date("1998.09.17");
+			//myday = new Date(1998,9-1,17);
+			
+			//두 날 사이에 가격을 구한다.
+			n1 = now.getTime();
+			n2 = myday.getTime();
+			n3 = n1 - n2;
+			
+			console.log(n1+","+n2+","+n3);
+			res = "태어난 날 : " + myday.toLocaleDateString() + "<br>";
+			res += "경과한 초 : " + n3 / 1000 + "<br>";
+			res += "경과한 분 : " + n3 / 1000 / 60+ "<br>";
+			res += "경과한 시간 : " + n3 / 1000 / 60 / 60+ "<br>";
+			res += "경과한 일 : " + n3 / 1000 / 60 / 60 / 24+ "<br>";
+			res += "경과한 년 : " + n3 / 1000 / 60 / 60 / 24 / 365+ "<br>";
+			
+			document.querySelector("#result1").innerHTML = res;
+			
+		}
+		
+		
+		//---------------------------------------------------
+		function proc2(){
+			invalue = document.getElementById('inday').value;
+			//alert(invalue);
+			
+			invalue = new Date(invalue);
+			
+			times = now.getTime() - invalue.getTime();
+			
+			days = times /1000 / 60 / 60 / 24;
+			if(days < 0){
+				alert("선택오류입니다.");
+				return; //proc2번을 종료해라.
+			}
+			alert(days);
+			//if(day)
+		
+		}
+		
+		</script>
+		
+	</head>
+	<body>
+		
+		<div class="box">
+			<h3>경과일 구하기</h3>
+			getTime() : millisec의 값으로 리턴된다<br>
+			초 : millisec의 값 / 1000<br>
+			분 : millisec의 값 / 1000/ 60<br>
+			시간 : millisec의 값 / 1000/ 60 / 60<br>
+			일 :millisec의 값 /1000/ 60 / 60 / 24<br>
+			년 :millisec의 값 /1000/ 60 / 60 / 24 / 365<br>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="result1"></div>
+		</div>
+		
+		<div class="box">
+			<h3>경과일 구하기</h3>
+			getTime() : millisec의 값으로 리턴된다<br>
+			구입날짜 : <input type="date" id="inday">
+			<input type="button" value="확인" onclick="proc2()">
+			<div id="result2"></div>
+		</div>
+	</body>
+</html>

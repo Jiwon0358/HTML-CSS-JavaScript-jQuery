@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<style type="text/css">
+		.box #result1, .box div{
+			border : 1px solid blue;
+			padding : 10px;
+			margin : 10px;
+		}
+		</style>
+		
+		<script type="text/javascript">
+		function proc1(){
+			n1 = new Date();
+			//주의!!!!숫자로 입력하면 달은 0부터 시작하는거라 한달이 증가 되어서 나온다.
+			n2 = new Date(2020,09,03); 
+			n3 = new Date("2020.09.03");
+			n4 = new Date(1000); //1970년 1월 1일 9시를 기준으로 1초(1000)가 지난 시점
+			
+			print('result1', n1, "new Date()");
+			print('result2', n2, "new Date(2020,09,03)");
+			print('result3', n3, "new Date('2020.09.03')");
+			print('result4', n4, 'new Date(1000)');
+	
+		}
+		function print(result, n, str){
+			
+			res1 = document.getElementById(result);
+			
+			res = str + "<br>";
+			res += n + "<br>";
+			res +=	"n.toLocaleString() : "+n.toLocaleString() + "<br>";
+			res +=	"n.toLocaleDateString() : "+n.toLocaleDateString() + "<br>";
+			res +=	"n.toLocaleTimeString() : "+n.toLocaleTimeString() + "<br>";
+			
+			res1.innerHTML = res;
+			
+		}
+		</script>
+	</head>
+	<body>
+		
+		<div class="box">
+			<h3>Date객체</h3>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="result1"></div>
+			<div id="result2"></div>
+			<div id="result3"></div>
+			<div id="result4"></div>
+		</div>
+	</body>
+</html>

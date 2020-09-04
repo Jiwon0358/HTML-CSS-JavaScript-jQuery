@@ -6,6 +6,11 @@
 		<link href="../css/public.css" rel="stylesheet">
 		<script type="text/javascript">
 		now = new Date();
+		//document.querySelector("#result2") : 이렇게 쓰면 body실행되기 전에 되는거라 안됨.
+		
+		window.onload = function(){//그래서 window.onload안에 넣어줌
+			outres = document.querySelector("#result2");
+		}
 		
 		function proc1(){
 			myday = new Date("1998.09.17");
@@ -25,6 +30,7 @@
 			res += "경과한 년 : " + n3 / 1000 / 60 / 60 / 24 / 365+ "<br>";
 			
 			document.querySelector("#result1").innerHTML = res;
+		
 			
 		}
 		
@@ -35,16 +41,24 @@
 			//alert(invalue);
 			
 			invalue = new Date(invalue);
-			
+			res = "구입날짜 : " + invalue.toLocaleDateString() + "<br>";
+			res += "오늘날짜 : " + now.toLocaleDateString() + "<br>";
 			times = now.getTime() - invalue.getTime();
 			
 			days = times /1000 / 60 / 60 / 24;
 			if(days < 0){
 				alert("선택오류입니다.");
+				outres.innerHTML = ""; //선택 오류면 아무것도 뜨지 않도록
 				return; //proc2번을 종료해라.
 			}
-			alert(days);
-			//if(day)
+			
+			if(days <= 7){
+				res += "교환/반품이 가능합니다<br>";
+			}else{
+				res += "교환/반품이 불가능합니다<br>";
+			}
+			
+			outres.innerHTML = res;
 		
 		}
 		

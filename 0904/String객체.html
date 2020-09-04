@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<style type="text/css">
+		.box div, .box #result1{
+		border : 1px dotted blue;
+		padding : 10px;
+		margin : 5px;
+		}
+		</style>
+		
+		<script type="text/javascript">
+		
+		str = "우리 나라 좋은 나라 대한 민국 만세";
+		function proc1(){
+			idx = str.length-1;
+			a = prompt("인덱스를 입력하세요", "0~"+ idx);
+			if(a > idx){
+				alert("입력할 수 있는 index범위를 넘었습니다.");
+				document.querySelector("#result1").innerHTML = ""; 
+				return;
+			}
+			aa = str.charAt(a);
+			document.querySelector("#result1").innerHTML = aa;
+		}
+		function proc2(){
+			a = str.slice(5, 10); //5~9 까지 나오게 하고 싶을 때
+			document.querySelector("#result2").innerHTML = "str.slice(5, 10) : " + a;
+			
+		}
+		function proc3(){
+			a = str.substring(11, 16); //11~15까지 나타내고 싶을 때
+			document.querySelector("#result3").innerHTML = "str.substring(11, 16) : " + a;
+		}
+		function proc4(){
+			a = str.substr(11,5);
+			document.querySelector("#result4").innerHTML = "str.substr(11,5) : " + a;
+			
+		}
+		function proc5(){
+			search = prompt("검색하고 싶은 문자를 입력하세요");
+			idx = 0;
+			res = "찾는 문자열 " + search + "은 ";
+			check = false;
+			
+				while(true){
+					idx = str.indexOf(search, idx);	
+					if(idx == -1){
+						break;
+					} else{
+						res += idx +" ";
+						idx += search.length;
+						check = true;
+					}
+				}
+				if(!check){
+					res += "없는 문자열 입니다.";
+				}else{
+					res += "번째에 있습니다.";
+				}
+				document.querySelector("#result5").innerHTML = res;
+				
+		}
+		function proc6(){
+			res = "";
+			//공백을 기준으로 문자열을 반환한다.
+			ss = str.split(" ");
+			for(i=0; i < ss.length; i++){
+				res += i + "번째 : " + ss[i] + "<br>";
+			}
+			document.querySelector("#result6").innerHTML = res;
+		}
+		function proc7(){
+			//입력한 값을 가져온다. : 5~10사이
+			idvalue = document.querySelector("#id").value;
+			namevalue = document.querySelector("#name").value;
+			
+/* 			res ="입력한 값 : " + idvalue + "," + idvalue.length +"<br>";
+			idvalue = idvalue.trim()
+			res +="공백제거 후 : " + idvalue.length +"<br>"; */
+			
+			idleng = idvalue.trim();
+			
+			if(idleng.length < 5 || idleng.length > 10){
+				alert("아이디를 5~10 사이의 글자를 입력하세요.");
+				return; //만족하지 않았는데 아래 이름부분이 실행되면 안되서 return
+			}else{
+				res = idleng + "님 환영합니다.<br>"
+			}
+			
+			nameleng = namevalue.trim();
+			if(nameleng.length < 3 || nameleng.length > 10){
+				alert("이름을 3~10 사이의 글자를 입력하세요.");
+				return;
+			}else{
+				res += nameleng + "님 즐거운 하루 되세요 .<br>"
+			}
+			
+			document.querySelector("#result7").innerHTML = res;
+			
+		}
+		
+		</script>
+	</head>
+	<body>
+		
+		<div class="box">
+			<h3>String 객체</h3>
+			str = "우리 나라 좋은 나라 대한 민국 만세";<br>
+			charAt(index)<br>
+			slice(start, end)<br>
+			substring(start,end)<br>
+			substr(start, length)<br>
+			<input type="button" value="charAt" onclick="proc1()">
+			<input type="button" value="slice" onclick="proc2()">
+			<input type="button" value="substring" onclick="proc3()">
+			<input type="button" value="substr" onclick="proc4()">
+			<div id="result1"></div>
+			<div id="result2"></div>
+			<div id="result3"></div>
+			<div id="result4"></div>
+		</div>
+		
+		<div class="box">
+			<h3>String 객체</h3>
+			str = "우리 나라 좋은 나라 대한 민국 만세";<br>
+			indexOf(index)<br>
+			나라 문자를 모두 검색하여 해당 인덱스를 구한다 <br>
+			<input type="button" value="charAt" onclick="proc5()">
+			<div id="result5"></div>
+		</div>
+		
+		<div class="box">
+			<h3>String 객체</h3>
+			str = "우리 나라 좋은 나라 대한 민국 만세";<br>
+			split("구분자", limit) : 한 문자열에서 구분자를 기준을 문자열을 분리하여배열을 생성한다.<br>
+			limit : 구분되는 문자의 갯수<br>
+			str 문자열에서 공백을 기준으로 분리하여 배열로 저장<br>
+			ss = str.split("");
+			<input type="button" value="split" onclick="proc6()">
+			<div id="result6"></div>
+		</div>
+		
+		<div class="box">
+			<h3>String 객체</h3>
+			trim() = 문자열에서 앞뒤 공백 제거<br>
+			아이디 : <input type="text" id = "id"><br>
+			이름 : <input type="text" id="name"><br>
+			<input type="button" value="trim" onclick="proc7()">
+			<div id="result7"></div>
+		</div>
+	</body>
+</html>

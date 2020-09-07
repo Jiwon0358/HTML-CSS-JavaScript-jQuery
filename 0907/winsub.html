@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+		function proc1(){
+			namevalue = document.querySelector("#name").value.trim();
+			
+			opener.document.querySelector("#result1").innerHTML = namevalue; //부모창으로 보냄
+			
+			window.close(); //부모창으로 내용 보낸후 창 꺼짐 설정
+		}
+		</script>
+	</head>
+	<body>
+		
+		<div class="box">
+			<h3>window 서브창 입니다.</h3>
+			입력받은 이름을 부모창에 출력 하기<br>
+			부모창을 나타내는 속성 : opener<br>
+			이름 : <input type="text" id="name">
+			<input type="button" value="확인" onclick="proc1()">
+		</div>
+	</body>
+</html>

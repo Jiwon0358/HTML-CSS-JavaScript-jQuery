@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+		
+		//난수 발생시키기
+		//난수는 함수 실행 시킬때마다 바뀌면 안되서 함수 안쪽에 있으면 안된다.
+		const random = parseInt(Math.random() * 100 + 1); //const : 값이 변하지 않는 상수
+		//입력한 횟수 세는 카운트도 마찬가지
+		count = 0;
+		
+		window.onload = function(){
+			inid = document.getElementById("in"); //여러번 쓰기 힘드니까 변수에 대입해서 사용
+		}
+		
+		values = "";
+		
+		//확인버튼 클릭
+		function proc1(){
+			//입력한 값 가져오기
+			invalue = inid.value.trim(); //trim : 공백제거하는 메서드
+			res = "";
+			if(random == invalue){
+				count++;
+				values += invalue + " ";
+				res += "축하합니다 정답입니다!<br>";
+				res += count +"회 만에 "+ random+"을 맞췄습니다.<br>";
+				res += "그동안 입력한 숫자들 : " + values;
+			}else if(random > invalue){
+				values += invalue + " "; //그동안 입력한 수 누적시키기 위해 사용
+				res += "더 큰수를 입력하세요 <br>";
+				count++;
+				inid.value = ""; //다음 수를 입력할 때 편하기 위해 공백처리
+				inid.focus(); //다음 수를 입력할 때 편하게 커서 깜빡이게 하기 위해 사용
+			}else{
+				values += invalue+ " "; //그동안 입력한 수 누적시키기 위해 사용
+				res += "더 작은 수를 입력하세요<br>";
+				count++;
+				inid.value = ""; //다음 수를 입력할 때 편하기 위해 공백처리
+				inid.focus(); //다음 수를 입력할 때 편하게 커서 깜빡이게 하기 위해 사용
+			}
+			
+			document.getElementById("result1").innerHTML = res;
+			
+		}
+		
+		
+		function proc2(){
+			com = ["가위", "바위", "보"];
+			//com = new Array("가위", "바위", "보");
+			
+			rand = Math.floor(Math.random() * 3);
+			computer = com[rand]; //랜덤 수 가져오기
+			
+			user = prompt("가위바위보 입력");
+			
+			res = "";
+			res += "컴퓨터 : " + computer + "<br>";
+			res += "유저 : " + user + "<br>";
+			if(computer == user){
+				res += "결과 : 비겼습니다."
+			}else if(computer == "가위" && user == "바위" || computer == "바위" && user == "보" || computer == "보" && user == "가위"){
+				res += "결과 : 이겼습니다! ^_^";
+			}else{
+				res += "결과 : 졌습니다..ㅠㅠㅠ"
+			}
+			
+			document.querySelector("#result2").innerHTML = res;
+				
+		}
+		
+		
+		function proc3(){
+			//배열선언
+			arr = new Array();
+
+			while(arr.length < 6){ //번호 6개가 저장되면 빠져나옴
+				//랜덤발생
+				lotto = parseInt(Math.random() * 45 + 1);
+				
+				//배열요소에 중복인지 아닌지 판별(중복된 값이 아니면 배열에 push)
+				if(arr.indexOf(lotto) < 0){ //중복됬는지 안됬는지 확인, 없으면 -1이 나옴
+					arr.push(lotto);
+				}
+				
+			}
+			res = "arr = " + arr + "<br>";
+			//arr.sort(); 이렇게만하면 자리수로 정렬하는 거라 한자리수와 두자리수가 나오면 제대로 정렬이 안된다.
+			res += "sort() = " + arr.sort() + "<br>";
+			arr.sort(function(a,b){
+				return a - b; //return값이 양수면 자리 바꿈, 음수면 자리 안바꿈.
+			})
+			res += "sort(function(a,b) : " + arr + "<br>";
+			
+			document.querySelector("#result3").innerHTML = res;
+			
+		}
+		
+		</script>
+	</head>
+	<body>
+		
+		<div class="box">
+			<h3>Math 객체</h3>
+			난수를 발생시켜 그 수를 맞추기<br>
+			못 맞추면 힌트 부여, 입력한 횟수를 구한다.<br>
+			<input type="text" id="in">
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="result1"></div>
+		</div>
+		
+		<div class="box">
+			<h3>Math 객체</h3>
+			난수를 발생시켜 가위바위보하기<br>
+			computer는 배열을 이용, 랜덤 발생 0~2;<br>
+			사람 입력 : prompt()를 이용해서 입력<br>
+			<input type="button" value="확인" onclick="proc2()">
+			<div id="result2"></div>
+		</div>
+		
+		<div class="box">
+			<h3>Math 객체</h3>
+			로또번호 생성하기<br>
+			사람 입력 : 1~45 번호 중 prompt()를 이용해서 1~45 번호 중  입력<br>
+			중복제거, 배열 사용<br>
+			<input type="button" value="확인" onclick="proc3()">
+			<div id="result3"></div>
+		</div>
+		
+		
+	</body>
+</html>

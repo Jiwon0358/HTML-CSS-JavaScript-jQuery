@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+			function proc1(){
+				dres1 = document.querySelector("#result1");
+				
+				setTimeout(function(){
+					dres1.style.background = "yellow"
+				}	, 1000); //1초후에 function을 실행해라
+			
+				
+			}
+			
+			function proc2(){
+				start = document.querySelector("#start"); //확인버튼을 한번누르면
+				start.style.display = "none"; //확인버튼을 사라지게해서 더이상 못누르게 한다.
+				
+//				dres2 = document.querySelector("#result2");
+				dres2 = document.body //body를 하면 브라우저. 즉 배경색이 바뀐다.
+				
+				a = setInterval(function(){
+					console.log(a)
+					r = Math.floor(Math.random() * 255);
+					g = Math.floor(Math.random() * 255);
+					b = Math.floor(Math.random() * 255);
+//					dres2.style.background = "rgb(" + r + "," + g + "," + b + ")" //1초마다 랜덤으로 색깔 바뀔수 있도록
+
+					//16진수로 색표현
+					r = r.toString(16);
+					g = g.toString(16);
+					b = b.toString(16);
+					dres2.style.background = "#"+r+g+b;
+				}, 1000);
+			}
+			
+			
+			function proc3(){
+				clearInterval(a); //위에 setInterval을 종료
+				start.style.display = "inline";
+			}
+			
+			
+			function changecolor(){
+				document.querySelector("#result2").style.background = "yellow";
+			}
+		</script>
+		<style type="text/css">
+		
+			#result1, #result2{
+				padding : 10px;
+				margin : 5px;
+				border : 1px dotted orange;
+			}
+		</style>
+		
+		
+	</head>
+	<body onload="changecolor()">
+		
+		<div class="box">
+			<h3>setTimeout</h3>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="result1"></div>
+		</div>
+		
+		<div class="box">
+			<h3>setInterval</h3>
+			dres2 = document.querySelector("#result2");<br>
+			dres2 = document.body  : body를 하면 브라우저의 배경색이 바뀐다.<br>
+			<input type="button" id = "start" value="확인" onclick="proc2()"> 
+			<input type="button" value="종료" onclick="proc3()">
+			<div id="result2"></div>
+		</div>
+	</body>
+</html>

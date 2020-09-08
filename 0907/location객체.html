@@ -8,7 +8,10 @@
 			function proc1(){
 				res = "href : " + location.href + "<br>"; //href : 전체경로
 				res += "hostname : " + location.hostname + "<br>";
-				
+				res += "host : " + location.host + "<br>";
+				res += "port : " +  location.port + "<br>";
+				res += "protocol : " + location.protocol + "<br>";
+				res += "pathname : " + location.pathname + "<br>";
 				document.querySelector("#result1").innerHTML = res;
 			}
 		</script>
@@ -18,6 +21,12 @@
 		<div class="box">
 			<h3>location객체</h3>
 			url정보 얻기<br>
+			href : 전체 경로<br>
+			host : hostname + port<br>
+			hostname : 서버이름(localhost)<br>
+			port : 80(웹의 기본포트, 나타나지 않는다)<br>
+			portname : 경로명<br>
+			
 			<input type="button" value="확인" onclick="proc1()">
 			<div id="result1"></div>
 		</div>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+		function proc1(){
+			//ultag = document.getElementsByTagName("ul")[0];
+			ultag = document.querySelector("ul");
+			
+			//allitem = ultag.getElementsByTagName("li");
+			allitem = ultag.querySelectorAll("li");
+			
+			res = "";
+			doc = document.querySelector("#result1");
+			
+			for(i = 0; i<allitem.length; i++){
+				res += allitem[i].firstChild.data + "<br>"; //.data를 써야 data를 가져올 수 있다.
+			}
+			
+			doc.innerHTML = res;
+			
+		}
+		
+		function proc2(){
+			ultag = document.querySelectorAll("ul")[1];
+			//allitem = ultag.getElementsByTagName("li");
+			allitem = ultag.querySelectorAll("li");
+			
+			res = "";
+		
+			for(i = 0; i<allitem.length; i++){
+				imgdata = allitem[i].firstChild.data; //.data를 써야 data를 가져올 수 있다.
+				
+				imgtag = document.createElement("img");
+				//<img src="" width = "" height = "">
+				imgtag.src = "../img/" + imgdata + ".jpg";
+				allitem[i].appendChild(imgtag);
+				
+				
+			}
+			
+		}
+		function proc3(clickli){
+			//clickli : 클릭한 li
+			imgdata = clickli.firstChild.data;
+			
+			imgtag = document.createElement("img");
+			
+			imgtag.src = "../img/" + imgdata + ".jpg";
+			
+			clickli.appendChild(imgtag);
+			
+		}
+		
+		
+		</script>
+		<style type="text/css">
+			.box img{
+				width : 70px;
+				height : 70px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box">
+			<h3></h3>
+			각 아이템 요소의 text 데이터 가져오기
+			<ul>
+				<li>List item 1</li>
+				<li>List item 2</li>
+				<li>List item 3</li>
+				<li>List item 4</li>
+				<li>List item 5</li>
+			</ul>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="result1"></div>
+		</div>
+		
+		<div class="box">
+			<h3>새로운 이미지 생성</h3>
+			확인 버튼을 클릭하면 각 아이템 요소에 해당하는 이미지를 생성해서 추가한다.
+			<ul>
+				<li>딸기스무디</li>
+				<li>꽃</li>
+				<li>단풍</li>
+				<li>핫초코</li>
+				<li>펭귄</li>
+			</ul>
+			<input type="button" value="확인" onclick="proc2()">
+		</div>
+		
+		<div class="box">
+			<h3>새로운 이미지 생성</h3>
+			각 아이템 요소를 클릭하면 이미지 요소를 생성해서 추가 한다.
+			<ul>
+				<li onclick="proc3(this)">movie1</li>
+				<li onclick="proc3(this)">movie2</li>
+				<li onclick="proc3(this)">movie3</li>
+				<li onclick="proc3(this)">movie4</li>
+				<li onclick="proc3(this)">movie5</li>
+			</ul>
+		</div>
+		
+	</body>
+</html>

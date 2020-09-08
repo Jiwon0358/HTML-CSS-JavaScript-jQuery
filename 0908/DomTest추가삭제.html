@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+				//전역변수라 어디서든 사용 가능
+				str = ["Happy","Birth","Day","To","You"]
+			function addProc(){
+				random = parseInt(Math.random() * str.length);
+				//str[random]
+				
+				//랜덤으로 텍스트를 선택하여 textNode를 생성
+				text = document.createTextNode(str[random]);
+				ptag = document.createElement("p");
+				ptag.appendChild(text);
+				
+				//만든 ptag를 result1에 출력
+				out = document.querySelector("#result1");
+				
+				out.appendChild(ptag);
+				
+			}
+			function delProc(){
+				//삭제 대상의 부모를 검색
+				parent = document.querySelector("#result1");
+				
+				//삭제 대상을 선택
+				child = parent.lastChild; //마지막에 있는 단어
+				
+				//부모요소에서 자식요소를 삭제
+				parent.removeChild(child)
+			}
+			
+			function proc2(){
+				random = parseInt(Math.random() * str.length);
+				
+				text = document.createTextNode(str[random]);
+				delbutton = document.createElement("input");
+				delbutton.type = "button";
+				delbutton.value = "삭제";
+				delbutton.click = function(){ //callback 함수 : 이름없이도 자동으로 수행되는 함수
+					
+				}
+				
+				ptag = document.createElement("p");
+				ptag.appendChild(text);
+				ptag.appendChild(delbutton);
+				
+				
+				out = document.querySelector("#result2");
+				
+				out.appendChild(ptag);
+				
+				
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		
+		<div class="box">
+			<h3>추가/삭제</h3>
+			추가버튼 클릭 시 랜덤으로 텍스트를 생성한다. - text = document.createTextNode("random")<br>
+			p태그를 생성하여 텍스트를 추가한다 - ptag = document.createElement('p') / ptag.appentChild(text)<br>
+			p태그를 result1번에 추가한다. document.querySelector("#result1").appendChild(ptag)<br>
+			<br>
+			삭제<br>
+			삭제버튼 클릭시 제일 마지막 단어를 삭제 - parent.removeChild(child)
+			<input type="button" value="추가" onclick="addProc()">
+			<input type="button" value="삭제" onclick="delProc()">
+			<div id="result1"></div>
+		</div>
+		
+				<div class="box">
+			<h3>추가/삭제</h3>
+			추가버튼 클릭 시 랜덤으로 텍스트를 생성한다. - text = document.createTextNode("random")<br>
+			삭제버튼을 생성한다 - del = document.createElement("button")<br>
+			p태그를 생성하여 텍스트와 버튼을 추가한다 - ptag = document.createElement('p') / 
+			ptag.appentChild(text)<br>
+			ptag.appentChild(del)<br>
+			p태그를 result2번에 추가한다. document.querySelector("#result2").appendChild(ptag)<br>
+			<br>
+			<input type="button" value="추가" onclick="proc2()">
+			<div id="result2"></div>
+		</div>
+	</body>
+</html>

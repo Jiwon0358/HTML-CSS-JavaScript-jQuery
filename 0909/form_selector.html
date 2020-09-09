@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<style type="text/css">
+			.box input[type=button]{
+				background-color : blue;
+				color : white;
+				padding : 2px 5px;
+				width : 100px;
+				height : 40px;
+				border-radius : 50px;
+				margin : 10px;
+				font-size: 1em;
+			}
+			
+			#input {
+				height : 30px;
+			}
+			input[value=확인]{
+				vertical-align: top;
+			}
+			input[type=text]{
+				margin-top :12px;
+			}
+			td{
+				text-align: center;
+				padding :5px;
+				width : 300px;
+			}
+			select{
+				width : 100%;
+				height : 100%;
+			}
+			#tb{
+				width : 100px;
+			}
+			
+		</style>
+		
+		<script type="text/javascript">
+		window.onload = function(){
+			left = document.querySelector("#left");
+			right = document.querySelector("#right");
+		}
+		
+			function proc1(){
+				input = document.querySelector("#input");
+				ivalue = input.value.trim(); //공백제거 하도록
+				
+				//공백만 입력되면 길이가 0이니까 저장되지 않도록 return;
+				if(ivalue.length < 1) return;
+				
+				//<option value="1">1</option>
+				opt = document.createElement("option");
+				opt.value = ivalue;
+				opt.text = ivalue;
+				
+				document.querySelector("#left").appendChild(opt);
+				input.value = "";//입력하면 공백으로 초기화
+				input.focus(); //커서 깜빡이도록
+				
+				
+			}
+			
+			function toRight(){
+				//왼쪽에서 선택 한 번째(index)를 구한다.
+				lselect = left.selectedIndex; //선택한 값의 인덱스 나오는 함수
+				
+				if(lselect == -1){ //아무것도 선택이 안된 상태
+					alert("항목을 선택하세요");
+					return;
+				}
+				//선택한 값으로 option 태그를 생성
+				lvalue = left.options[lselect].value; //선택한 번째의 값.
+				opt = document.createElement("option");
+				opt.value = lvalue;
+				opt.text = lvalue;
+				
+				//option을 오른쪽에 추가
+				right.appendChild(opt);
+				
+				
+				//왼쪽선택한 값을 지운다
+				left.removeChild(left.options[lselect])
+			}
+			
+			function toLeft(){
+				//왼쪽에서 선택 한 번째(index)를 구한다.
+				rselect = right.selectedIndex; //선택한 값의 인덱스 나오는 함수
+				
+				if(rselect == -1){ //아무것도 선택이 안된 상태
+					alert("항목을 선택하세요");
+					return;
+				}
+				//선택한 값으로 option 태그를 생성
+				rvalue = right.options[rselect].value; //선택한 번째의 값.
+				opt = document.createElement("option");
+				opt.value = rvalue;
+				opt.text = rvalue;
+				
+				//option을 오른쪽에 추가
+				left.appendChild(opt);
+				
+				
+				//왼쪽선택한 값을 지운다
+				right.removeChild(right.options[rselect])
+			}
+			function rightAll(){
+				//왼쪽의 전체 갯수를 구한다
+				leng = left.length;
+				for(i = 0; i < leng; i++){
+					//차례대로 하나씩 선택한 번째의 값
+					svalue = left.options[0].value; //삭제를 하면 길이는 계속해서 줄어들고 인덱스도 1번이 0번이되고 2번이 1번이 되고 이런식으로 줄어든다.
+													//그래서 0번만 지정해주면 가능하다. 
+					
+					//option 태그 생성
+					opt = document.createElement("option");
+					opt.value = svalue;
+					opt.text = svalue;
+					//오른쪽에 추가
+					right.appendChild(opt);
+					//왼쪽에서 삭제
+					left.removeChild(left.options[0]);
+				}
+			}
+			function leftAll(){
+				//오른쪽의 전체 갯수를 구한다.
+				leng = right.length;
+				for(i = 0; i < leng; i++){
+					svalue = right.options[0].value; //삭제를 하면 길이는 계속해서 줄어들고 인덱스도 1번이 0번이되고 2번이 1번이 되고 이런식으로 줄어든다.
+													//그래서 0번만 지정해주면 가능하다. 
+					//option 태그 생성
+					opt = document.createElement("option");
+					opt.value = svalue;
+					opt.text = svalue;
+					//오른쪽에 추가
+					left.appendChild(opt);
+					//왼쪽에서 삭제
+					right.removeChild(right.options[0]);
+
+				}
+			}
+		</script>
+	</head>
+	<body>
+		
+		<div class="box">
+			<h3>select</h3>
+			<table border="1">
+				<tr>
+					<td colspan="3">select객체 예제</td>
+				</tr>
+				<tr>
+					<td>
+						<select multiple size = "10" id="left">
+						</select>
+					</td>
+					<td id="tb">
+						<input type="button" value=">" onclick="toRight()"><br>
+						<input type="button" value=">>" onclick="rightAll()"><br>
+						<input type="button" value="<" onclick="toLeft()"><br>
+						<input type="button" value="<<" onclick="leftAll()"><br>
+					</td>
+					<td>
+						<select multiple size = "10" id="right"> <!--multiple : 옵션을 펼쳐서 보여줘라  -->
+
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3"><input type="text" id="input"><input type="button" value="확인" onclick="proc1()"></td>
+				</tr>
+			</table>
+			<div id="result1"></div>
+		</div>
+	</body>
+</html>

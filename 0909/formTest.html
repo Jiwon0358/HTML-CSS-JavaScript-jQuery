@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+			function print1(){
+				dan = document.querySelector('#txt');
+				val = dan.value.trim();
+				
+				res = val + "단\n\n";
+				for(i=1; i<10; i++){
+					res += val + " * " + i + " = " + val*i + "\n";
+				}
+				document.getElementById('ta1').innerHTML = res;
+			}
+			
+			function print2(){
+				name = document.querySelector('#nameTxt').value;
+				res = name + "씨!\n당신은 "
+				
+				gender = document.getElementsByName('gender');
+				for(i=0; i<gender.length; i++){
+					if(gender[i].checked){
+						res += gender[i].value + " ";
+					}
+				}
+				res += "이고,\n취미는 "
+				
+				hob = document.getElementsByName('hobby');
+				for(i=0; i<hob.length; i++){
+					if(hob[i].checked){
+						res += hob[i].value + " ";
+					}
+				}
+				res += "군요!";
+
+				document.querySelector('#ta2').innerHTML = res;
+			}
+			
+			function print3(){
+				dan = document.querySelector('select').value;
+				res = "";
+				
+				for(i=1; i<10; i++){
+					res += dan + " * " + i + " = " + dan*i + "\n";
+				}
+				
+				document.querySelector('#ta3').innerHTML = res;
+			}
+		</script>
+		<style type="text/css">
+			select{width:80px; height:40px; vertical-align: middle;}
+			#inf3{vertical-align: middle;}
+			#ta3{text-align: center; padding-top:25%; font-size: 25px;}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h3>form 문제1</h3>
+			<input type="text" id="txt"> 단 <input type="button" value="출 력" onclick="print1()"><br>
+			<textarea rows="30" cols="51" id="ta1"></textarea>
+		</div>
+		<div class="box">
+			<h3>form 문제2</h3>
+			이름 : <input type="text" id="nameTxt"><br>
+			성별 : <input type="radio" name="gender" value="남자">남자 <input type="radio" id="female" name="gender" value="여자">여자<br>
+			취미 : 
+			<input type="checkbox" name="hobby" value="여행"> 여행
+			<input type="checkbox" name="hobby" value="독서"> 독서
+			<input type="checkbox" name="hobby" value="영화감상"> 영화감상
+			<input type="checkbox" name="hobby" value="바둑"> 바둑
+			<input type="checkbox" name="hobby" value="장기"> 장기
+			<input type="checkbox" name="hobby" value="등산"> 등산
+			<input type="checkbox" name="hobby" value="낚시"> 낚시
+			<br><br>
+			<input type="button" value="결과출력" onclick="print2()"><br>
+			<textarea rows="20" cols="120" id="ta2"></textarea>
+		</div>
+		<div class="box">
+			<h3>form 문제3</h3>
+			<table id="t3">
+				<tr>
+					<td>
+						<select>
+							<option value="2">2 단</option>
+							<option value="3">3 단</option>
+							<option value="4">4 단</option>
+							<option value="5">5 단</option>
+							<option value="6">6 단</option>
+							<option value="7">7 단</option>
+							<option value="8">8 단</option>
+							<option value="9">9 단</option>
+						</select>
+					 	<input type="button" id="inp3" value="출 력" onclick="print3()">
+					</td>
+				</tr>
+				<tr><th>결과 출력</th></tr>
+				<tr><td><textarea rows="10" cols="20" id="ta3"></textarea></td></tr>
+			</table>
+		</div>
+	</body>
+</html>

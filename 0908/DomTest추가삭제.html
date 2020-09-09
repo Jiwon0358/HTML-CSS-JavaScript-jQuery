@@ -40,8 +40,8 @@
 				delbutton = document.createElement("input");
 				delbutton.type = "button";
 				delbutton.value = "삭제";
-				delbutton.click = function(){ //callback 함수 : 이름없이도 자동으로 수행되는 함수
-					
+				delbutton.onclick = function(){ //callback 함수 : 이름없이도 자동으로 수행되는 함수
+					this.parentNode.remove(); //this. : 삭제 버튼 / parentNode : 삭제버튼의 부모는 p태그를 / remove() : 삭제해라(그럼 p태그와 그의 자식인 삭제버튼도 같이 삭제)
 				}
 				
 				ptag = document.createElement("p");

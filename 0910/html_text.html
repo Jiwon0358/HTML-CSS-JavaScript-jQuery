@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>html_text</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script src="../js/jquery-3.5.1.min.js"></script>
+		
+		<script>
+		$(function(){
+			res = "";
+			$('input[value=html]').on('click', function(){
+// 				res += $('p').html() + "\n"; //첫번째것만 가져온다.
+// 				alert(res);
+
+				//반복문을 실행 - p태그를 선택해서 갯수만큼 반복실행
+/* 				$.each($('p'), function(i){
+					res += i + "번째 요소 : " + $(this).html() + "\n";
+				}) */
+				$('p').each(function(i){
+					
+				})
+
+			})
+			
+			$('input[value=text]').on('click', function(){
+				res = "";
+				res += $('p').text() + "\n";
+				alert(res);
+			})
+		})
+		</script>
+		<style>
+			span{
+				background: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h3>내용가져오기</h3>
+			p태그의 내용을 가져온다<br>
+			html() : p태그안의 내용과 태그포함<br> 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			p태그가 여러개일경우 첫번째만 가져온다.<br>
+			text() : p태그안의 내용만. 태그미포함<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			p태그가 여러개일경우 모든 p를 대상으로 한다.<br><br>
+			
+			<p>1<span>홍길동</span></p>
+		    <p>2<span>개나리</span></p>
+		    <p>3<span>진달래</span></p>  
+			<input type="button" value="html">
+			<input type="button" value="text">
+			<div id="result1"></div>
+		</div>
+	</body>
+</html>

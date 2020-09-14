@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script src="../js/jquery-3.5.1.min.js"></script>
+		<script>
+			$(function(){
+				$('.box1 :button').on('click', function(){
+					$('li:first-child').css('border','3px solid red');
+					$('li:first').css('background','yellow');
+					
+				})
+					
+				$('.box2 :button').on('click', function(){
+					//$('#tab1 td:first-child , #tab1 td:nth-child(3)').css('background', 'lightblue');
+					//$('#tab1 td:last-child , #tab1 td:nth-child(2n)').css('background','pink');
+						
+					$('#tab1 td:nth-child(odd)').css('background', 'lightblue');
+					$('#tab1 td:nth-child(even)').css('background', 'pink');
+				
+					$('#tab2 td:first-child').css('background','gray');
+					$('#tab2 td:nth-child(2)').css('background','lightgray');
+					$('#tab2 td:nth-child(3)').css('background','white');
+					
+					//tr:first td : 첫번째 tr의 td
+					$('#tab2 tr:first td').css({'background':'black', 'color':'white'});
+				})
+				
+				
+			})
+		</script>
+		
+		<style type="text/css">
+			td{
+				width : 200px;
+				height : 40px;
+				text-align: center;
+				padding : 5px;
+			
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box box1">
+			<h3>자식필터</h3>
+			:first-child<br>
+			:last-child<br>
+			:nth-child(index or even or odd or 방정식 등)<br><br>
+			$('li:first-child').css('border','3px solid red');<br>
+			$('li:first').css('background','yellow');<br>
+			<input type="button" value="확인">
+			<div id="result1">
+				<h3>여자에게 인기있는 남자들</h3>
+				<ol>
+					<li>능력있는 남자</li>
+					<li>돈 많은 남자</li>
+					<li>잘 생긴 남자</li>
+					<li>프로그래머</li>
+				</ol>
+				<h3>남자에게 인기있는 여자들</h3>
+				<ol>
+					<li>예쁜 여자</li>
+					<li>귀여운 여자</li>
+					<li>섹시한 여자</li>
+				</ol>
+			</div>
+		</div>
+		
+		
+		<div class="box box2">
+			<h3>자식필터</h3>
+			<input type="button" value="확인">
+			<div id="result2">
+				<table id="tab1">
+					<tr>
+						<td>이름</td><td>번호</td><td>이름</td><td>번호</td>
+					</tr>
+					<tr>
+						<td>one</td><td>62만원</td><td>six</td><td>62만원</td>
+					</tr>
+					<tr>
+						<td>two</td><td>45만원</td><td>seven</td><td>45만원</td>
+					</tr>
+					<tr>
+						<td>three</td><td>33만원</td><td>eight</td><td>33만원</td>
+					</tr>
+					<tr>
+						<td>four</td><td>72만원</td><td>nine</td><td>72만원</td>
+					</tr>
+					<tr>
+						<td>five</td><td>77만원</td><td>ten</td><td>77만원</td>
+					</tr>
+			</table>
+			
+			<br><br>
+			<table id="tab2">
+				<tr>
+					<td>이름</td>
+					<td>주소</td>
+					<td>전화번호</td>
+				</tr>
+				<tr>
+					<td>홍길동</td>
+					<td>대전</td>
+					<td>000000</td>
+				</tr>
+				<tr>
+					<td>지원이</td>
+					<td>갈마동</td>
+					<td>111111</td>
+				</tr>
+				<tr>
+					<td>프리지아</td>
+					<td>서울</td>
+					<td>222222</td>
+				</tr>
+			</table>
+				
+			</div>
+		</div>
+	</body>
+</html>
